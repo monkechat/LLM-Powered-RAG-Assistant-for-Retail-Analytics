@@ -1,4 +1,5 @@
 # ✨ LLM-Powered RAG Assistant for Retail Analytics
+<img width="1753" height="572" alt="image" src="https://github.com/user-attachments/assets/6342a9fa-4664-4ccc-9370-61b7e8179fb5" />
 
 A Streamlit app that converts natural-language retail analytics questions into SQL (via an LLM), executes the SQL against Databricks, and returns the resulting table.
 
