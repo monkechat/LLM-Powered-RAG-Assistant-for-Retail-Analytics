@@ -165,4 +165,5 @@ else:
 # Footer
 # -----------------------------
 st.markdown("---")
-st.caption("Built with Streamlit by Abhay and Prem")
+
+st.caption("Built with Streamlit")
