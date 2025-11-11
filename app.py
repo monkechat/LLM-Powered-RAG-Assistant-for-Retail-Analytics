@@ -121,6 +121,12 @@ components.html(
     height=0,
 )
 
+# Function 
+@st.cache_resource(ttl = 7200, show_spinner = False)
+def process_user_query(user_input: str):
+    import retriever_executor
+    return retriever_executor.get_data_from_query(user_input)
+
 # -----------------------------
 # Process Button
 # -----------------------------
@@ -129,9 +135,10 @@ if run_button:
     if user_input.strip():
         with st.spinner("Processing your query..."):
             
+            print(f"User Query: {user_input}")
+
             # Function call to process the user query and get the resulting data table
-            import retriever_executor
-            result_df = retriever_executor.get_data_from_query(user_input)
+            result_df = process_user_query(user_input)
 
             # Save to session state
             st.session_state.result_df = result_df
@@ -165,5 +172,4 @@ else:
 # Footer
 # -----------------------------
 st.markdown("---")
-
-st.caption("Built with Streamlit")
+st.caption("Built with Streamlit by Abhay and Prem")
